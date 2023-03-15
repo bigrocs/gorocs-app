@@ -12,6 +12,6 @@ onHide(() => {
 </script>
 <style>
 body {
-  background-color: black;
+  background-color: #1D1D1D;
 }
 </style>

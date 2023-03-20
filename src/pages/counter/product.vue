@@ -7,7 +7,7 @@
   </van-list>
 </template>
 <script setup lang="ts">
-import type { ProductItem } from '@/types/product'
+import type { ProductItem } from '@/types/order'
 const items: ProductItem[] = [
   {
     plu: 12456,

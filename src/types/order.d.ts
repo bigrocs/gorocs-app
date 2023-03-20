@@ -20,10 +20,10 @@ export enum OrderStatus {
 
 // 定义商品的类型
 export interface Product {
-  id: string; // 商品编号
+  id: number; // 商品编号
   name: string; // 商品名称
-  plu: string; // 商品PLU码
-  barcode: string; // 商品条形码
+  plu: number; // 商品PLU码
+  barcode: number; // 商品条形码
   price: number; // 商品单价
   quantity: number; // 商品数量
   subtotal: number; // 商品小计金额
@@ -62,73 +62,3 @@ export interface Order {
   cashier: string; // 收银员名称
   orderStatus: OrderStatus; // 订单状态
 }
-// 测试数据
-const sampleProducts: Product[] = [
-  {
-    id: "1",
-    name: "Product 1",
-    plu: "P123",
-    barcode: "B123",
-    price: 10.99,
-    quantity: 2,
-    subtotal: 21.98,
-    snapshotId:"5eb63bbbe01eeed093cb22bb8f5acdc3"
-  },
-  {
-    id: "2",
-    name: "Product 2",
-    plu: "P234",
-    barcode: "B234",
-    price: 8.99,
-    quantity: 1,
-    subtotal: 8.99,
-    snapshotId:"5eb63bbbe01eeed093cb22bb8f5acdc3"
-  },
-];
-
-const sampleDiscounts: Discount[] = [
-  {
-    id: "d1",
-    name: "10% off",
-    type: "percent",
-    amount: 2.20,
-    condition: 20.0,
-  },
-  {
-    id: "d2",
-    name: "5 off",
-    type: "fixed",
-    amount: 5.0,
-  },
-];
-
-const samplePayments: Payment[] = [
-  {
-    id: "p1",
-    name: "Cash",
-    method: PaymentMethod.CASH,
-    amount: 20.0,
-    status: "completed",
-  },
-  {
-    id: "p2",
-    name: "UnionPay",
-    method: PaymentMethod.UNIONPAY,
-    amount: 10.77,
-    status: "completed",
-  },
-];
-
-export const sampleOrder: Order = {
-  orderId: "o1",
-  orderTime: new Date(),
-  customerName: "John Doe",
-  customerPhone: "555-1234",
-  products: sampleProducts,
-  totalAmount: 27.77,
-  payment: samplePayments,
-  discounts: sampleDiscounts,
-  orderDiscount: 7.20, // add order discount here
-  cashier: "Alice",
-  orderStatus: OrderStatus.PAID,
-};

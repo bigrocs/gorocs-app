@@ -2,6 +2,7 @@ import { store } from '@/store';
 import { defineStore } from 'pinia';
 
 import type { Product } from '@/types/product'
+import { sampleProducts } from '@/types/product'
 
 export const useProductStore = defineStore({
   id: 'product',
@@ -9,6 +10,9 @@ export const useProductStore = defineStore({
     products: [] as Product[],
   }),
   actions: {
+    initProducts() {
+      this.products = sampleProducts;
+    },
     addProduct(product: Product) {
       this.products.push(product);
     },

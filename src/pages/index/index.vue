@@ -20,6 +20,10 @@ import Order from '@/pages/order/index.vue';
 import PayOrder from '@/pages/payOrder/index.vue';
 import System from '@/pages/system/index.vue';
 import User from '@/pages/user/index.vue';
+
+import { logger } from '@/utils/log4js';
+logger.debug("Some debug messages");
+
 const sidebarKey = ref('counter')
 function handleChangeSidebar(key:string) {
   sidebarKey.value = key

@@ -20,7 +20,7 @@ export enum OrderStatus {
 
 // 定义商品的类型
 export interface Product {
-  id: number; // 商品编号
+  id: number; // 商品顺序id
   name: string; // 商品名称
   plu: number; // 商品PLU码
   barcode: number; // 商品条形码
@@ -42,6 +42,7 @@ interface Discount {
 // 定义支付方式的类型
 export interface Payment {
   id: string; // 支付编号
+  orderNo: string; // 唯一支付订单号
   name: string; // 支付名称
   method: PaymentMethod; // 支付方式
   amount: number; // 支付金额
@@ -55,7 +56,8 @@ export interface Order {
   customerName?: string; // 顾客姓名
   customerPhone?: string; // 顾客联系电话
   products: Product[]; // 商品列表
-  totalAmount: number; // 实付金额
+  totalQuantity: number; // 商品总数量
+  totalAmount: number; // 订单总金额
   payment: Payment[]; // 支付方式列表
   discounts: Discount[]; // 优惠信息列表
   orderDiscount: number; // 订单优惠金额

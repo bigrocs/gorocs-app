@@ -6,4 +6,5 @@ tag:
 	git push --tags
 .PHONY: run
 run:
+	npm run dev:h5
 	

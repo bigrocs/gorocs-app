@@ -1,3 +1,10 @@
+<!--
+ * @Author: BigRocs
+ * @Date: 2023-06-23 17:31:08
+ * @LastEditTime: 2023-06-24 15:27:09
+ * @LastEditors: BigRocs
+ * @Description: QQ: 532388887, Email:bigrocs@qq.com
+-->
 <template>
   <van-row justify="space-between">
     <van-col span="3" class="col1">
@@ -21,8 +28,8 @@ import PayOrder from '@/pages/payOrder/index.vue';
 import System from '@/pages/system/index.vue';
 import User from '@/pages/user/index.vue';
 
-import { logger } from '@/utils/log4js';
-logger.debug("Some debug messages");
+import logx from '@/utils/logx';
+logx.info("init app");
 
 const sidebarKey = ref('counter')
 function handleChangeSidebar(key:string) {

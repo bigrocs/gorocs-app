@@ -1,8 +1,15 @@
+<!--
+ * @Author: BigRocs
+ * @Date: 2023-06-23 17:31:08
+ * @LastEditTime: 2023-06-24 21:53:15
+ * @LastEditors: BigRocs
+ * @Description: QQ: 532388887, Email:bigrocs@qq.com
+-->
 <template>
   <van-row justify="space-between">
     <van-col span="8"  class="counter">
         <van-row class="order" justify="space-between">
-          <Product/>
+          <!-- <Product/> -->
         </van-row>
         <van-row class="input" justify="space-between">
           <Input/>
@@ -13,7 +20,11 @@
 </template>
 <script setup lang="ts">
 import Input from './input.vue';
-import Product from './product.vue';
+// import Product from './product.vue';
+import { useProductStore } from '@/store/modules/product'
+
+const storeProduct= useProductStore()
+storeProduct.initProducts()
 
 </script>
 

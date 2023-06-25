@@ -2,7 +2,7 @@ import { store } from '@/store';
 import { defineStore } from 'pinia';
 
 import type { Order, Product, Payment, Discount } from '@/types/order'
-import { OrderStatus } from '@/types/order'
+import { OrderStatus } from '@/types/order.d'
 
 export const useOrderStore = defineStore({
   id: 'order', // 定义store的唯一标识符
